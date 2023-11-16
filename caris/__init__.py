@@ -1,9 +1,4 @@
 """
-example_pkg: A sample Python package demonstrating package structure.
-
-This package contains two modules, module1 and module2, which provide
-various functionalities for demonstration purposes.
-
 @Author: Vinicius Rezende Nogueira
 @Email: contato@viniciusnogueira.com
 @Version: 1.0.0
