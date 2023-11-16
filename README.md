@@ -17,16 +17,15 @@ This repository offers Python tools and scripts for automating and enhancing mar
 
 ### Reading HIPS Files
 - Python scripts allow for the reading and analysis of HIPS data, offering an efficient way to extract specific information.
-- Example: Read depth data or seabed coverage information from HIPS files for analysis.
+- Example: Extract metadata information from Hips.
 
 ### Reading CSAR Files
 - Reading CSAR files is facilitated by Python scripts, allowing access to detailed seabed scanning data.
-- Example: Extract information from CSAR scans for detailed mapping of submarine relief.
+- Example: Extract metadata information from CSAR.
 
 ## Requirements
-- Python 3.x
-- Specific Python libraries (list if necessary)
-- CARIS Batch (with a valid license)
+- Python 3.11
+- Teledyne Caris Hips and Sips (with a valid license)
 
 ## How to Use
 1. Clone the repository to your local machine.
