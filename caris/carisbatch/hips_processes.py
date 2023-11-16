@@ -1,12 +1,5 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Nov 10 10:42:21 2023
-
-@author: vinic
-"""
 
 from ._carisbatch import CarisBatchCommand
-
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # Add Kraken TIL To Mosaic

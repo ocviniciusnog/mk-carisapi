@@ -1,7 +1,6 @@
 
 from ._carisbatch import CarisBatchCommand
 
-
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # Calculate Coverage Volumes
 class CalculateCoverageVolumes(CarisBatchCommand):
