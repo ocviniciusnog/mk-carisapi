@@ -1,7 +1,7 @@
 # Python Integration with CARIS Hips & Sips
 
 ## Overview
-This repository offers Python tools and scripts for automating and enhancing marine data processing through integration with CARIS Batch. It facilitates the assembly and execution of CARIS Batch commands, as well as reading information from HIPS and CSAR files.
+This repository offers Python tools and scripts for automating and enhancing marine data processing through integration with Teledyne CARIS Hips & Sips. It facilitates the assembly and execution of CARIS Batch commands, as well as reading information from HIPS and CSAR files.
 
 ## Using Python to Assemble and Execute Caris Batch Commands
 
