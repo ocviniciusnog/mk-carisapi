@@ -13,7 +13,7 @@ This repository offers Python tools and scripts for automating and enhancing mar
 - The assembled commands can be executed directly from Python, enabling automation of repetitive tasks and batch processing.
 - Example: Automate the generation of marine cartographic products from data sets.
 
-## Using Python to Read Information from HIPS and Csar Files
+## Using Python to Read Information from HIPS and CSAR Files
 
 ### Reading HIPS Files
 - Python scripts allow for the reading and analysis of HIPS data, offering an efficient way to extract specific information.
