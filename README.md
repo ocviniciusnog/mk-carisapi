@@ -36,6 +36,9 @@ This repository offers Python tools and scripts for automating and enhancing mar
 ## Contributions
 Contributions are welcome! Please read the contribution guidelines to learn how to contribute to the project.
 
+## References:
+https://www.teledynecaris.com/docs/7.0/hips%20and%20sips//index.html#page/CARIS%2520HIPS%2520and%2520SIPS%2520Help%2FHIPS%2520NOTICES.01.1.html%23
+
 ## License
 This project is distributed under the MIT License. See the `LICENSE` file for more details.
 
