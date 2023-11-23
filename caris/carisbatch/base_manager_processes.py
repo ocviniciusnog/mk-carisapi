@@ -1,6 +1,31 @@
+"""
+Base Manager Processes Module
+
+This module extends the CarisBatchCommand class to provide essential management 
+functionalities for server-based raster and point cloud data processing. It 
+includes classes that facilitate the addition of sources to combined rasters, 
+creation of new rasters from logical operations on existing data, and the merging 
+of multiple point clouds into a single dataset.
+
+Each class in this module targets specific server-based operations, making it 
+possible to handle large datasets efficiently and effectively. These classes 
+are crucial for the dynamic management of geospatial data within server 
+environments, ensuring that data combining, joining, and transformation processes 
+are optimized for large-scale projects.
+
+The module plays a pivotal role in managing and manipulating large volumes of 
+raster and point cloud data, providing robust solutions for complex data management 
+scenarios in geospatial workflows.
+
+Author: Vinicius Nogueira
+Created: 15-July-2020
+Last Modified: 23-November-2023
+
+Note:
+    This module is an integral part of the MK-CarisAPI.
+"""
 
 from ._carisbatch import CarisBatchCommand
-
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # Server Add to Raster Combine

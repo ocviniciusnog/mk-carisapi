@@ -1,3 +1,24 @@
+"""
+Compose Processes Module
+
+This module extends the CarisBatchCommand class to specifically handle S-57 
+processing tasks within the Caris software. It includes specialized classes for 
+assigning SCAMIN values, modifying S-57 headers, exporting S-57 products, and 
+other related operations. Each class within this module is precisely tailored to 
+manage distinct aspects of the S-57 format, ensuring accurate and efficient 
+handling of these tasks.
+
+The classes in this module encapsulate the necessary commands and parameters for
+their respective S-57 processing tasks, simplifying the execution and management 
+of these specialized processes.
+
+Author: Vinicius Nogueira
+Created: 15-July-2020
+Last Modified: 23-November-2023
+
+Note:
+    This module is an integral part of the MK-CarisAPI.
+"""
 
 from ._carisbatch import CarisBatchCommand
 

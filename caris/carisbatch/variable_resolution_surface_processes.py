@@ -1,3 +1,26 @@
+"""
+Variable Resolution Surface Processes Module
+
+This module extends the CarisBatchCommand class to facilitate specific Caris batch
+processing tasks related to variable resolution surface processes. It encompasses
+a suite of classes, each designed for a specialized task such as managing variable
+resolution surfaces, adjusting surface properties, and performing advanced surface
+manipulations. These classes inherit from CarisBatchCommand, leveraging its
+foundational functionalities while introducing specific features and parameters
+pertinent to variable resolution surface processes.
+
+Each class within this module is meticulously crafted to encapsulate and execute
+distinct Caris batch commands. This design principle ensures efficient handling
+and streamlined operation of complex surface processing tasks within the Caris
+environment.
+
+Author: Vinicius Nogueira
+Created: 15-July-2020
+Last Modified: 23-November-2023
+
+Note:
+    This module is an integral part of the MK-CarisAPI.
+"""
 
 from ._carisbatch import CarisBatchCommand
 
@@ -380,5 +403,3 @@ class UpdateVRCUBEDisambiguation(CarisBatchCommand):
     _option_registry = {
         'UPDATEVRCUBEDISAMBIGUATION': _UpdateVRCUBEDisambiguationSettings
     }
-
-

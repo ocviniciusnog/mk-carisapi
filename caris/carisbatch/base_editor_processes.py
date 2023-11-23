@@ -1,3 +1,24 @@
+"""
+Base Editor Processes Module
+
+This module extends the CarisBatchCommand class to provide a comprehensive suite
+of raster and vector data manipulation functionalities. It includes classes for
+various operations such as adding computed bands, modifying raster headers,
+exporting products, and more, each designed for specific tasks in a geospatial
+data processing workflow.
+
+The classes encapsulate commands and parameters for a wide range of processes, 
+from simple raster modifications to complex vector data transformations. These 
+classes facilitate efficient data processing, ensuring accuracy and consistency 
+in operations.
+
+Author: Vinicius Nogueira
+Created: 15-July-2020
+Last Modified: 23-November-2023
+
+Note:
+    This module is an integral part of the MK-CarisAPI.
+"""
 
 from ._carisbatch import CarisBatchCommand
 
@@ -2046,4 +2067,3 @@ class WarpRaster(CarisBatchCommand):
     _option_registry = {
         'WARPRASTER': _WarpRasterSettings
     }
-

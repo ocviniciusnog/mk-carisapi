@@ -1,3 +1,28 @@
+"""
+CZMIL Processes Module
+
+This module extends the CarisBatchCommand class to provide specialized processes 
+for handling Coastal Zone Mapping and Imaging Lidar (CZMIL) data. The module 
+encompasses a variety of classes designed to classify, compare, convert, export, 
+filter, georeference, import, optimize, and update CZMIL data.
+
+Each class in this module is tailored for specific aspects of CZMIL data processing, 
+from noise classification and reflectance optimization to the conversion of CZMIL 
+raw data and the generation of georeferenced point clouds. These tools are essential 
+for ensuring the accuracy and usability of CZMIL data in coastal and underwater 
+mapping projects.
+
+The module facilitates the integration and manipulation of CZMIL data within the b
+roader framework of geospatial data processing, contributing to enhanced data 
+quality and reliability in environmental and geographical analyses.
+
+Author: Vinicius Nogueira
+Created: 15-July-2020
+Last Modified: 23-November-2023
+
+Note:
+    This module is an integral part of the MK-CarisAPI.
+"""
 
 from ._carisbatch import CarisBatchCommand
 

@@ -1,3 +1,25 @@
+"""
+HIPS Processes Module
+
+This module extends the CarisBatchCommand class to provide specialized functionalities 
+for Hydrographic Information Processing System (HIPS) operations. It encompasses 
+a diverse array of classes, each tailored to handle specific tasks within 
+hydrographic data processing workflows, such as adding Kraken TIL to mosaics, 
+managing HIPS grids, and updating SIPS contact positions.
+
+Each class within this module encapsulates the necessary commands and parameters 
+to facilitate a wide range of hydrographic data processing tasks. From integrating 
+intensity bands and managing raster mosaics to noise classification and bathymetric 
+data filtering, these classes are designed to ensure precision and efficiency in 
+hydrographic data processing.
+
+Author: Vinicius Nogueira
+Created: 15-July-2020
+Last Modified: 23-November-2023
+
+Note:
+    This module is an integral part of the MK-CarisAPI.
+"""
 
 from ._carisbatch import CarisBatchCommand
 

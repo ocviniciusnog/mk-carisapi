@@ -1,10 +1,30 @@
+"""
+HIPS Processes Module
+
+This module extends the CarisBatchCommand class to provide specialized functionalities 
+for Hydrographic Information Processing System (HIPS) operations. It encompasses 
+a diverse array of classes, each tailored to handle specific tasks within hydrographic 
+data processing workflows, such as adding Kraken TIL to mosaics, managing HIPS grids, 
+and updating SIPS contact positions.
+
+Each class within this module encapsulates the necessary commands and parameters 
+to facilitate a wide range of hydrographic data processing tasks. From integrating 
+intensity bands and managing raster mosaics to noise classification and bathymetric 
+data filtering, these classes are designed to ensure precision and efficiency in 
+hydrographic data processing.
+
+Author: Vinicius Nogueira
+Created: 15-July-2020
+Last Modified: 23-November-2023
+
+Note:
+    This module is an integral part of the MK-CarisAPI.
+"""
 
 from ._carisbatch import CarisBatchCommand
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # Add Kraken TIL To Mosaic
-
-
 class AddKrakenTILToMosaic(CarisBatchCommand):
     """
     The AddKrakenTILToMosaic class manages the process of adding intensity bands from Kraken *.TIL files 
@@ -180,10 +200,10 @@ class ClassifyHIPSNoise(CarisBatchCommand):
     _option_key = None
 
     _common_settings = {
-        "mira_url": None,
-        "finest_vertical_resolution": None,
+        "mira_url": "http://username:password@carismira.ai",
+        "finest_vertical_resolution": 0.1,
         "noise_confidence_filter_threshold": None,
-        "level_of_detail": None,
+        "level_of_detail": "Medium"
     }
 
     class _NoSpecificOptions:
@@ -211,13 +231,13 @@ class CompareHIPS(CarisBatchCommand):
     _option_key = None
 
     _common_settings = {
-        "compare": None,
-        "backscatter_precision": None,
-        "bathymetry_precision": None,
-        "ignore_rejected": None,
-        "motion_precision": None,
-        "navigation_precision": None,
-        "sidescan_precision": None,
+        "compare": "ALL",
+        "backscatter_precision": 0.0000001,
+        "bathymetry_precision": 0.0000001,
+        "ignore_rejected": False,
+        "motion_precision": 0.0000001,
+        "navigation_precision": 0.0000001,
+        "sidescan_precision": 0.0000001,
         "navigation_geometry": None
     }
 
@@ -251,12 +271,12 @@ class ComputeHIPSSeparationModel(CarisBatchCommand):
     _common_settings = {
         "resolution": None,
         "smooth_height": None,
-        "dynamic_heave": None,
+        "dynamic_heave": "NONE",
         "mru_remote_heave": None,
         "antenna_offset": None,
         "dynamic_draft": None,
         "vehicle_depth": None,
-        "waterline": None,
+        "waterline": "NONE",
         "height_correction": None,
         "time_offset": None
     }
@@ -285,9 +305,9 @@ class ComputeSIPSTowfishNavigation(CarisBatchCommand):
     _option_key = None
 
     _common_settings = {
-        "smooth_sensor": None,
-        "use_cmg": None,
-        "recompute_contact_positions": None
+        "smooth_sensor": [],
+        "use_cmg": False,
+        "recompute_contact_positions": False
     }
 
     class ComputeSIPSTowfishNavigation_Settings:
@@ -316,9 +336,9 @@ class ComputeHIPSBoresightCalibration(CarisBatchCommand):
 
     _common_settings = {
         "extent": None,
-        "head_number": None,
-        "max_patches": None,
-        "min_observability": None,
+        "head_number": "ONE",
+        "max_patches": 25,
+        "min_observability": 0,
         "update_vessel": None,
         "report_file": None
     }
@@ -549,10 +569,10 @@ class CreateSIPSMosaic(CarisBatchCommand):
     _common_settings = {
         "mosaic_engine": None,
         "resolution": None,
-        "blending": None,
-        "weighting": None,
+        "blending": "WEIGHTED",
+        "weighting": "SWATH",
         "output_crs": None,
-        "editable": None,
+        "editable": False,
         "extent": None
     }
 
@@ -560,18 +580,18 @@ class CreateSIPSMosaic(CarisBatchCommand):
 
         default_settings = {
             "auto_resolution": None,
-            "imagery": None,
+            "imagery": "BEAM_AVERAGE",
             "avg": None,
-            "avg_normalization_range": None,
+            "avg_normalization_range": "30.00 60.00 ON",
             "beam_pattern_file": None,
-            "beam_pattern_file_operation": None,
+            "beam_pattern_file_operation": "UPDATE",
             "correct_for_acquisition_mode": None,
             "s7k_compensated_data": None,
-            "local_absorption": None,
-            "filter_angle_t1": None,
+            "local_absorption": "8.00 35.00",
+            "filter_angle_t1": "90.00 90.00",
             "filter_t1": "OUTSIDE",
-            "filter_angle_t2": None,
-            "filter_t2": None,
+            "filter_angle_t2": "90.00 90.00",
+            "filter_t2": "OUTSIDE",
             "surface": None,
             "filter": None,
             "sound_velocity": None,
@@ -582,22 +602,22 @@ class CreateSIPSMosaic(CarisBatchCommand):
 
         default_settings = {
             "auto_resolution": None,
-            "search_radius": None,
-            "imagery": None,
-            "area_avg": None,
-            "avg_normalization_range": None,
-            "updating_size": None,
-            "chunk_size_multiplier": None,
-            "avg_curve_source_time_series": None,
+            "search_radius": "OFF 1.000",
+            "imagery": "BEAM_AVERAGE",
+            "area_avg": "ON",
+            "avg_normalization_range": "30.00 60.00 ON",
+            "updating_size": "2% of the ContributingSize",
+            "chunk_size_multiplier": "5",
+            "avg_curve_source_time_series": "TIME_SERIES_AVG",
             "beam_pattern_file": None,
-            "beam_pattern_file_operation": None,
+            "beam_pattern_file_operation": "UPDATE",
             "correct_for_acquisition_mode": None,
             "s7k_compensated_data": None,
-            "local_absorption": None,
-            "filter_angle_t1": None,
-            "filter_t1": None,
-            "filter_angle_t2": None,
-            "filter_t2": None,
+            "local_absorption": "8.00 35.00",
+            "filter_angle_t1": "90.00 90.00",
+            "filter_t1": "OUTSIDE",
+            "filter_angle_t2": "90.00 90.00",
+            "filter_t2": "OUTSIDE",
             "surface": None,
             "filter": None,
             "sound_velocity": None
@@ -606,22 +626,22 @@ class CreateSIPSMosaic(CarisBatchCommand):
     class _SIPSSideScanSettings():
 
         default_settings = {
-            "channel": None,
-            "beam_pattern": None,
+            "channel": "BOTH",
+            "beam_pattern": "NONE",
             "beam_pattern_file": None,
             "gain": None,
             "tvg": None,
             "gain_normalization": None,
-            "despeckle": None,
+            "despeckle": "NONE",
             "ratio_filter": None,
             "ratio_filter_limit": None,
             "across_distance_limit": None,
             "filter": None,
             "extrapolate_time": None,
             "registration_bathy": None,
-            "gyro_source": None,
+            "gyro_source": "AUTO",
             "smooth_gyro": None,
-            "sound_velocity": None,
+            "sound_velocity": "1500 m/s",
             "altitude_offset": None,
             "correct_for_pitch": None
         }
@@ -671,12 +691,12 @@ class DetectHIPSCriticalSoundings(CarisBatchCommand):
     _common_settings = {
         "surface": None,
         "input_band": None,
-        "output_shoal_status": None,
-        "output_deep_status": None,
+        "output_shoal_status": "DESIGNATED",
+        "output_deep_status": "OUTSTANDING",
         "shoal_attributes": None,
         "deep_attributes": None,
-        "contour_interval_type": None,
-        "max_isolations": None,
+        "contour_interval_type": "HALF_RESOLUTION",
+        "max_isolations": 100000,
         "radius_filter": None
     }
 
@@ -730,18 +750,18 @@ class ExportHIPS(CarisBatchCommand):
         "nadir_depth_only": None,
         "include_flag": None,
         "include_header": None,
-        "delimiter": None,
+        "delimiter": ",",
         "output_crs": None,
         "coordinate_format": None,
-        "coordinate_precision": None,
+        "coordinate_precision": 3,
         "include_attribute": None,
-        "z_axis_convention": None,
+        "z_axis_convention": "DOWN",
         "attribute_filter": None,
         "sample": None,
-        "elevation_unit": None,
+        "elevation_unit": "m",
         "coordinate_unit": None,
-        "other_precision": None,
-        "other_unit": None,
+        "other_precision": 3,
+        "other_unit": "m",
         "ignore_disabled_beams": None
     }
 
@@ -752,18 +772,18 @@ class ExportHIPS(CarisBatchCommand):
             "nadir_depth_only": None,
             "include_flag": None,
             "include_header": None,
-            "delimiter": None,
+            "delimiter": ",",
             "output_crs": None,
             "coordinate_format": None,
-            "coordinate_precision": None,
+            "coordinate_precision": 3,
             "include_attribute": None,
-            "z_axis_convention": None,
+            "z_axis_convention": "DOWN",
             "attribute_filter": None,
             "sample": None,
-            "elevation_unit": None,
+            "elevation_unit": "m",
             "coordinate_unit": None,
-            "other_precision": None,
-            "other_unit": None,
+            "other_precision": 3,
+            "other_unit": "m"
         }
 
     class _GSFOptions():
@@ -797,21 +817,21 @@ class FilterHIPSAttitude(CarisBatchCommand):
         "enable_filtering": None,
         "enable_smoothing": None,
         "filter_break_interpolation": None,
-        "filter_type": None,
-        "window_size_type": None,
-        "threshold": None,
-        "window_size_time": None,
-        "window_size_sample": None,
+        "filter_type": "MOVING_AVERAGE",
+        "window_size_type": "POINTS",
+        "threshold": 1,
+        "window_size_time": 1,
+        "window_size_sample": 3
     }
 
     class _SecondsWindowSizeSettings():
         default_settings = {
-            "window_size_time": None
+            "window_size_time": 1
         }
 
     class _PointsWindowSizeSettings():
         default_settings = {
-            "window_size_sample": None
+            "window_size_sample": 3  # Only odd numbers, minimum 3
         }
 
     _option_registry = {

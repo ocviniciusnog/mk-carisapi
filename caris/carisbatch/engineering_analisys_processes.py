@@ -1,3 +1,29 @@
+"""
+Engineering Analysis Processes Module
+
+This module, building upon the CarisBatchCommand class, introduces specialized 
+functionalities for conducting engineering analysis within geospatial datasets. 
+It encompasses classes that are crucial for volumetric calculations, contour 
+generation, and other analytical processes critical in engineering and construction 
+planning.
+
+Key classes such as CalculateCoverageVolumes and ContourRasterByModel offer advanced 
+tools for evaluating terrain models, computing volumes, and generating isolines. 
+These functionalities are essential for assessing environmental impacts, planning 
+construction projects, and other engineering-related tasks.
+
+The classes within this module are tailored to provide precision and efficiency 
+in handling complex calculations and transformations required in engineering 
+analysis. They serve as vital components in the broader geospatial data processing 
+and analysis workflow.
+
+Author: Vinicius Nogueira
+Created: 15-July-2020
+Last Modified: 23-November-2023
+
+Note:
+    This module is an integral part of the MK-CarisAPI.
+"""
 
 from ._carisbatch import CarisBatchCommand
 
